@@ -1,7 +1,7 @@
 package Lab1;
 
 public class App{
-    public static boolean ready = false;
+    public static volatile boolean ready = false;
     
     public static void main(String[] args){
         Product product = new Product();
@@ -25,6 +25,7 @@ class Product{
                 wait();
             }
             catch(InterruptedException e){ // без этого выдает ошибку. Видимо, обязательно необходима обработка случая прерывания потока (исключения e).
+                Thread.currentThread().interrupt();
             }
         }
         App.ready = false;
@@ -55,6 +56,7 @@ class Provider implements Runnable{
             try{
                 Thread.sleep(1L * 1000L);
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
             System.out.println("Инициация события!");
             event();
