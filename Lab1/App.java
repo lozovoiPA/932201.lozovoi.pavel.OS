@@ -1,8 +1,6 @@
 package Lab1;
 
 public class App{
-    public static volatile boolean ready = false;
-    
     public static void main(String[] args){
         Product product = new Product();
         Provider provider = new Provider(product);
@@ -13,14 +11,15 @@ public class App{
 }
 
 class Product{
+    public boolean ready = false;
     public synchronized void provide(){
-        if (App.ready)
+        if (ready)
             return;
-        App.ready = true;
+        ready = true;
         notify();
     }
     public synchronized void consume(){
-        while(!App.ready){
+        while(!ready){
             try{
                 wait();
             }
@@ -28,7 +27,7 @@ class Product{
                 Thread.currentThread().interrupt();
             }
         }
-        App.ready = false;
+        ready = false;
     }
     public boolean shown = true;
 }
