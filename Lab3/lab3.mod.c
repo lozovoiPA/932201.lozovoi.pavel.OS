@@ -37,8 +37,24 @@ static const char ____versions[]
 __used __section("__versions") =
 	"\x1c\x00\x00\x00\xca\x39\x82\x5b"
 	"__x86_return_thunk\0\0"
+	"\x14\x00\x00\x00\xfd\x3f\x3a\x9e"
+	"proc_remove\0"
+	"\x1c\x00\x00\x00\x27\x0d\x32\xa9"
+	"ktime_get_seconds\0\0\0"
+	"\x14\x00\x00\x00\x6e\x4a\x6e\x65"
+	"snprintf\0\0\0\0"
+	"\x1c\x00\x00\x00\x48\x9f\xdb\x88"
+	"__check_object_size\0"
+	"\x18\x00\x00\x00\xe1\xbe\x10\x6b"
+	"_copy_to_user\0\0\0"
+	"\x18\x00\x00\x00\x4e\xba\x82\x76"
+	"__copy_overflow\0"
+	"\x1c\x00\x00\x00\xcb\xf6\xfd\xf0"
+	"__stack_chk_fail\0\0\0\0"
 	"\x14\x00\x00\x00\xbb\x6d\xfb\xbd"
 	"__fentry__\0\0"
+	"\x14\x00\x00\x00\x2d\xd4\x0b\xec"
+	"proc_create\0"
 	"\x10\x00\x00\x00\x7e\x3a\x2c\x12"
 	"_printk\0"
 	"\x18\x00\x00\x00\x3a\x0a\xd8\xfc"
@@ -48,4 +64,4 @@ __used __section("__versions") =
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "89D9964E937B49B98E0DADC");
+MODULE_INFO(srcversion, "557E8AE320CCC417906B8EE");
